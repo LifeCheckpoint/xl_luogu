@@ -16,6 +16,7 @@ inline int read()
 }
 
 int N, k, T;
+const int NMAX=1005,KMAX=300,TMAX=2005;
 
 inline int dis(int* v1, int* v2){
     int d=0.0;
@@ -23,21 +24,10 @@ inline int dis(int* v1, int* v2){
     return d;
 }
 
-int argmin(int* ds){
-    int mind=1000000,bi=0;
-    for(int i=0;i<k;i++){
-        if(mind>ds[i]){
-            mind=ds[i];
-            bi=i;
-        }
-    }
-    return bi;
-}
-
 int main()
 {
-    int data[1200][500];
-    int fi[1000][500];
+    int data[NMAX][KMAX];
+    int fi[TMAX][KMAX];
     scanf("%d %d %d",&N,&k,&T);
     for(int i=0;i<N;i++){
         for(int j=0;j<k;j++){
@@ -50,13 +40,13 @@ int main()
         }
     }
     
-    int d[1200];
+    int d[NMAX],bis[TMAX];
     for(int i=0;i<T;i++){
         memset(d, 0x3f, sizeof(d));
         for(int j=0;j<N;j++){
             d[j]=dis(fi[i], data[j]);
         }
-        int mind=1000000;
+        int mind=40000*k+1;
         int bi=0;
         for(int p=0;p<k;p++){
             if(mind>d[p]){
@@ -64,7 +54,13 @@ int main()
                 bi=p;
             }
         }
-        printf("%d\n",bi+1);
+        bis[i]=bi;
+    }
+    for(int i=0;i<T;i++){
+        for(int j=0;j<k;j++){
+            printf("%d ",data[bis[i]][j]);
+        }
+        printf("\n");
     }
     return 0;
 }

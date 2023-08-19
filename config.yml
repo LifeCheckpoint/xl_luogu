@@ -1,0 +1,29 @@
+vec1.in:
+  timeLimit: 1000
+  memoryLimit: 512000
+  score: 5
+
+vec2.in:
+  timeLimit: 1000
+  memoryLimit: 512000
+  score: 5
+
+vec3.in:
+  timeLimit: 1000
+  memoryLimit: 512000
+  score: 5
+
+vec4.in:
+  timeLimit: 1000
+  memoryLimit: 512000
+  score: 5
+
+vec5.in:
+  timeLimit: 1000
+  memoryLimit: 512000
+  score: 5
+
+vec6.in:
+  timeLimit: 1000
+  memoryLimit: 512000
+  score: 5
